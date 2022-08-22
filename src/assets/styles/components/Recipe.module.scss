@@ -1,0 +1,35 @@
+.recipe {
+  border-radius: 20px;
+  min-height: 300px;
+  cursor: pointer;
+
+  &:hover {
+    img {
+      transform: scale(1.3);
+      transition: 1s transform;
+    }
+    .recipeTitle {
+        color: var(--primary);
+        transition: 1s color;
+    }
+  }
+
+  .imageContainer {
+    height: 200px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+    .img {
+      width: 100%;
+      
+    }
+  }
+
+  .recipeTitle {
+    height: 80px;
+    border: 1px solid var(--gray-2);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
+  }
+}
