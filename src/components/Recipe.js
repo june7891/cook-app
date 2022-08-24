@@ -1,20 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../assets/styles/components/Recipe.module.scss';
-import imgRecipe from "../assets/images/saumon.jpg";
 
-const Recipe = () => {
+
+const Recipe = ({title, image}) => {
+
+  const [liked, setLiked] = useState(false);
+
+  const handleClick = () => {
+    setLiked(!liked)
+  }
+
   return (
     <div className={`d-flex flex-column ${styles.recipe}`}>
     <div className={`${styles.imageContainer}`}>
-        <img src={imgRecipe} alt="saumon" />
+        <img src={image} alt="saumon" />
     </div>
         <div className={`${styles.recipeTitle} d-flex flex-column justify-content-center align-items-center`}>
-             <h3 className='mb-20'>Recipe</h3>
-             <span>coeur</span>
+             <h3 className='mb-20'>{title}</h3>
+             <i onClick={handleClick} className={` ${liked ? 'text-primary' : ''} fa-solid fa-lg fa-heart`}></i>
         </div>
        
     </div>
   )
 }
 
-export default Recipe
+export default Recipe;
